@@ -1,5 +1,4 @@
 import pandas as pd
-from sklearn.linear_model import Lasso
 from joblib import load
 
 model=load("model.joblib")

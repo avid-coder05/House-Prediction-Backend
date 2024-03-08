@@ -4,3 +4,4 @@ joblib
 gunicorn
 flask_cors
 pandas
+scikit-learn

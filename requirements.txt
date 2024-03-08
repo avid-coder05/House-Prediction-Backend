@@ -3,3 +3,4 @@ numpy
 joblib
 gunicorn
 flask_cors
+pandas

@@ -2,14 +2,21 @@ import pandas as pd
 
 db = pd.read_csv("data.csv", index_col=0)
 
+
 def add_cred(data):
     global db
     new_entries = []
-    new_entries.append({'username': data['username'], 'password': data['password']})
+
+    if data['username'] in db['username'].values:
+        return False
+
+    new_entries.append(
+        {'username': data['username'], 'password': data['password']})
     new_db = pd.DataFrame(new_entries)
     db = pd.concat([db, new_db], ignore_index=True)
     db.to_csv("data.csv")
     return True
+
 
 def check_cred(data):
     for index, row in db.iterrows():
